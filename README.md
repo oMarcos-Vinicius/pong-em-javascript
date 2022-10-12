@@ -12,3 +12,7 @@ No draw, pintamos o palco de preto usando o backgroung, a bolinha usando o circl
 >Fazendo a bolinha voltar ao bater nas bordas
 <p> Para fazer isso, usamos a estrutura de condição If, onde verificamos se a posição da bolinha, nos dois eixos, estão ultrapassando o limite do "width" e "height". <br>Se sim, multiplicamos o valor da velocidade X e Y da bolinha -1. Isso fará com que o valor inicial (6) se tranforme em (-6) fazendo com que a bolinha volte.
 </p>
+
+>O limite deve ser a borda da bolinha e não o centro
+<p>Corrigido o erro onde metade da bolinha ultrapassa o limite do palco. Isso ocorre que a possição da bolinha é o seu centro e não as suas extremidades.<br>Isso foi corrido adicionando a variável "raio", que seria a metade do diametro. Adicionamos ou subtraímos o valor de raio nas codições Ifs
+</p>
