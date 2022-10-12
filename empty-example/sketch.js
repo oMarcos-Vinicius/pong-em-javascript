@@ -17,4 +17,11 @@ function draw() {
     circle(xBolinha, yBolinha, diametreo)
     xBolinha += velocidadeXBolinha;
     yBolinha += velocidadeyBolinha;
+
+    if (xBolinha > width || xBolinha < 0) {
+        velocidadeXBolinha *= -1;
+    }
+    if (yBolinha > height || yBolinha < 0) {
+        velocidadeyBolinha *= -1;
+    }
 }
