@@ -16,3 +16,8 @@ No draw, pintamos o palco de preto usando o backgroung, a bolinha usando o circl
 >O limite deve ser a borda da bolinha e não o centro
 <p>Corrigido o erro onde metade da bolinha ultrapassa o limite do palco. Isso ocorre que a possição da bolinha é o seu centro e não as suas extremidades.<br>Isso foi corrido adicionando a variável "raio", que seria a metade do diametro. Adicionamos ou subtraímos o valor de raio nas codições Ifs
 </p>
+
+>Refatorando separando as funções e comentando o código
+<p>A função Draw estava cuidando de todas as tarefas de nosso jogo. Isso não é uma boa prativa. Por isso, separamando as tarefas criando outra funções.<br>
+Também comentamos em nosso cógido para facilitar o entendimento do mesmo.
+</p>
