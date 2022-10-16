@@ -24,7 +24,12 @@ Também comentamos em nosso cógido para facilitar o entendimento do mesmo.
 
 <h1>Módulo 2: Criando minha raquete no Jogo</h1>
 
-> Criando minha raquete.
-<p> Na biblioteca do p5, encontramos a função rect para desenhar um retangulo. Definimos quatro paremetros: (x,y,width,heigth).
+>Criando minha raquete.
+<p> Na biblioteca do p5, encontramos a função rect para desenhar um retangulo. Definimos quatro paremetros: (x,y,width,heigth).<br>
 Aproveitei para transformar os meus lets em um array.
+</p>
+
+>Movimentando minha raquete
+<p>Para movimentar a raquete alteramos o valor da posicaoY para mais 10 ou menos 10 caso a tecla pra cima ou para baixo esteja precionada.<br>
+Para validarmos se a tecla está precionada, usamos a função do p5: keyIsDown
 </p>
