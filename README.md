@@ -21,3 +21,10 @@ No draw, pintamos o palco de preto usando o backgroung, a bolinha usando o circl
 <p>A função Draw estava cuidando de todas as tarefas de nosso jogo. Isso não é uma boa prativa. Por isso, separamando as tarefas criando outra funções.<br>
 Também comentamos em nosso cógido para facilitar o entendimento do mesmo.
 </p>
+
+<h1>Módulo 2: Criando minha raquete no Jogo</h1>
+
+> Criando minha raquete.
+<p> Na biblioteca do p5, encontramos a função rect para desenhar um retangulo. Definimos quatro paremetros: (x,y,width,heigth).
+Aproveitei para transformar os meus lets em um array.
+</p>
