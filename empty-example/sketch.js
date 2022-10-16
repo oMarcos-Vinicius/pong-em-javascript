@@ -1,12 +1,22 @@
 //Tamanho da bolinha
-let xBolinha = 300;
-let yBolinha = 200;
-let diametro = 15;
-let raio = diametro / 2;
+let bolinha = {
+    posicaoX: 300,
+    posicaoY: 200,
+    diametro: 15,
+    raio: 7.5
+}
 
 // Velocidade da bolinha
 let velocidadeXBolinha = 6;
 let velocidadeyBolinha = 6;
+
+// variaveis da raquete
+let raquete = {
+    posicaoX: 5,
+    posicaoY: 150,
+    largura: 10,
+    comprimento: 90
+}
 
 //Palco
 function setup() {
@@ -20,24 +30,29 @@ function setup() {
 function draw() {
     background(0)
     desenhaBolinha();
+    mostrarRaquete();
     movimentaBolinha();
     verificaColisaoBorda();
 }
 
 function desenhaBolinha() {
-    circle(xBolinha, yBolinha, diametro)
+    circle(bolinha.posicaoX, bolinha.posicaoY, bolinha.diametro)
 }
 
 function movimentaBolinha() {
-    xBolinha += velocidadeXBolinha;
-    yBolinha += velocidadeyBolinha;
+    bolinha.posicaoX += velocidadeXBolinha;
+    bolinha.posicaoY += velocidadeyBolinha;
 }
 
 function verificaColisaoBorda() {
-    if (xBolinha + raio > width || xBolinha - raio < 0) {
+    if (bolinha.posicaoX + bolinha.raio > width || bolinha.posicaoX - bolinha.raio < 0) {
         velocidadeXBolinha *= -1;
     }
-    if (yBolinha + raio > height || yBolinha - raio < 0) {
+    if (bolinha.posicaoY + bolinha.raio > height || bolinha.posicaoY - bolinha.raio < 0) {
         velocidadeyBolinha *= -1;
     }
+}
+
+function mostrarRaquete() {
+    rect(raquete.posicaoX, raquete.posicaoY, raquete.largura, raquete.comprimento)
 }
