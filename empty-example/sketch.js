@@ -32,6 +32,7 @@ function draw() {
     desenhaBolinha();
     mostrarRaquete();
     movimentaBolinha();
+    movimentarRaquete();
     verificaColisaoBorda();
 }
 
@@ -55,4 +56,13 @@ function verificaColisaoBorda() {
 
 function mostrarRaquete() {
     rect(raquete.posicaoX, raquete.posicaoY, raquete.largura, raquete.comprimento)
+}
+
+function movimentarRaquete() {
+    if (keyIsDown(UP_ARROW)) {
+        raquete.posicaoY -= 10;
+    }
+    if (keyIsDown(DOWN_ARROW)) {
+        raquete.posicaoY += 10;
+    }
 }
