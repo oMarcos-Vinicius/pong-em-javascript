@@ -26,6 +26,8 @@ function setup() {
     cnv.position(x, y);
 }
 
+let colidiu = false;
+
 //Desenha no palco
 function draw() {
     background(0)
@@ -34,7 +36,8 @@ function draw() {
     movimentaBolinha();
     movimentarRaquete();
     verificaColisaoBorda();
-    verificaColisaoRaquete();
+    //verificaColisaoRaquete();
+    verificaColisaoRaqueteBiblioteca();
 }
 
 function desenhaBolinha() {
@@ -43,7 +46,7 @@ function desenhaBolinha() {
 
 function movimentaBolinha() {
     bolinha.posicaoX += velocidadeXBolinha;
-    //bolinha.posicaoY += velocidadeyBolinha;
+    bolinha.posicaoY += velocidadeyBolinha;
 }
 
 function verificaColisaoBorda() {
@@ -70,6 +73,14 @@ function movimentarRaquete() {
 
 function verificaColisaoRaquete() {
     if (bolinha.posicaoX - bolinha.raio < raquete.posicaoX + raquete.largura && bolinha.posicaoY - bolinha.raio < raquete.posicaoY + raquete.comprimento && bolinha.posicaoY + bolinha.raio > raquete.posicaoY) {
+        velocidadeXBolinha *= -1
+    }
+}
+
+function verificaColisaoRaqueteBiblioteca() {
+    colidiu = collideRectCircle(raquete.posicaoX, raquete.posicaoY, raquete.largura, raquete.comprimento, bolinha.posicaoX, bolinha.posicaoY, bolinha.diametro);
+    //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
+    if (colidiu) {
         velocidadeXBolinha *= -1
     }
 }
