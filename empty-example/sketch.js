@@ -34,6 +34,7 @@ function draw() {
     movimentaBolinha();
     movimentarRaquete();
     verificaColisaoBorda();
+    verificaColisaoRaquete();
 }
 
 function desenhaBolinha() {
@@ -42,7 +43,7 @@ function desenhaBolinha() {
 
 function movimentaBolinha() {
     bolinha.posicaoX += velocidadeXBolinha;
-    bolinha.posicaoY += velocidadeyBolinha;
+    //bolinha.posicaoY += velocidadeyBolinha;
 }
 
 function verificaColisaoBorda() {
@@ -64,5 +65,11 @@ function movimentarRaquete() {
     }
     if (keyIsDown(DOWN_ARROW)) {
         raquete.posicaoY += 10;
+    }
+}
+
+function verificaColisaoRaquete() {
+    if (bolinha.posicaoX - bolinha.raio < raquete.posicaoX + raquete.largura && bolinha.posicaoY - bolinha.raio < raquete.posicaoY + raquete.comprimento && bolinha.posicaoY + bolinha.raio > raquete.posicaoY) {
+        velocidadeXBolinha *= -1
     }
 }
