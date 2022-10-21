@@ -33,3 +33,7 @@ Aproveitei para transformar os meus lets em um array.
 <p>Para movimentar a raquete alteramos o valor da posicaoY para mais 10 ou menos 10 caso a tecla pra cima ou para baixo esteja precionada.<br>
 Para validarmos se a tecla está precionada, usamos a função do p5: keyIsDown
 </p>
+
+>Colisão com a raquete
+<p>usamos um if para verificar se o a posição X e Y da bolinha e menor que a posição X e Y da raquete. Em caso afirmativo, invertemos a direção da bolinha. -- tive dificuldades nessa aula --
+</p>
