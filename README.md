@@ -37,3 +37,8 @@ Para validarmos se a tecla está precionada, usamos a função do p5: keyIsDown
 >Colisão com a raquete
 <p>usamos um if para verificar se o a posição X e Y da bolinha e menor que a posição X e Y da raquete. Em caso afirmativo, invertemos a direção da bolinha. -- tive dificuldades nessa aula --
 </p>
+
+>Importando outra biblioteca
+<p>Importamos uma biblioteca do p5 sobre colisões. E nela encontramos um função (collideRectCircle) que valida se um retagunlo está colidindo com um circulo. Baixamos a biblioteca e a importamos pelo index.html. Criamos a variavel "colidiu" como valor false. Criamos a função verificaColisaoRaqueteBiblioteca e dentro dela usamos a função da biblioteca collideRectCircle passando os parametros: x da raquete, y da raquete, lagura da raquete, comprimento da raquete, x da bolinha, y da bolinha, diametro da bolinha.
+collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
+</p>
