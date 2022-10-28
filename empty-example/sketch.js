@@ -18,6 +18,13 @@ let raquete = {
     comprimento: 90
 }
 
+// variaveis da raquete do oponente
+let raqueteOponente = {
+    posicaoX: 585,
+    posicaoY: 150,
+    velocidadeYOponente: 0
+}
+
 //Palco
 function setup() {
     var cnv = createCanvas(600, 400);
@@ -32,12 +39,14 @@ let colidiu = false;
 function draw() {
     background(0)
     desenhaBolinha();
-    mostrarRaquete();
+    mostrarRaquete(raquete.posicaoX, raquete.posicaoY);
+    mostrarRaquete(raqueteOponente.posicaoX, raqueteOponente.posicaoY);
     movimentaBolinha();
     movimentarRaquete();
     verificaColisaoBorda();
     //verificaColisaoRaquete();
     verificaColisaoRaqueteBiblioteca();
+    movimentarRaqueteOponente();
 }
 
 function desenhaBolinha() {
@@ -58,8 +67,8 @@ function verificaColisaoBorda() {
     }
 }
 
-function mostrarRaquete() {
-    rect(raquete.posicaoX, raquete.posicaoY, raquete.largura, raquete.comprimento)
+function mostrarRaquete(x, y) {
+    rect(x, y, raquete.largura, raquete.comprimento)
 }
 
 function movimentarRaquete() {
@@ -83,4 +92,9 @@ function verificaColisaoRaqueteBiblioteca() {
     if (colidiu) {
         velocidadeXBolinha *= -1
     }
+}
+
+function movimentarRaqueteOponente() {
+    raqueteOponente.velocidadeYOponente = bolinha.posicaoY - raqueteOponente.posicaoY - raquete.comprimento / 2 - 30;
+    raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente;
 }
