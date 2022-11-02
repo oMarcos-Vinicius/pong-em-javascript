@@ -45,8 +45,9 @@ function draw() {
     movimentarRaquete();
     verificaColisaoBorda();
     //verificaColisaoRaquete();
-    verificaColisaoRaqueteBiblioteca();
+    verificaColisaoRaquete(raquete.posicaoX, raquete.posicaoY);
     movimentarRaqueteOponente();
+    verificaColisaoRaquete(raqueteOponente.posicaoX, raqueteOponente.posicaoY);
 }
 
 function desenhaBolinha() {
@@ -86,8 +87,8 @@ function verificaColisaoRaquete() {
     }
 }
 
-function verificaColisaoRaqueteBiblioteca() {
-    colidiu = collideRectCircle(raquete.posicaoX, raquete.posicaoY, raquete.largura, raquete.comprimento, bolinha.posicaoX, bolinha.posicaoY, bolinha.diametro);
+function verificaColisaoRaquete(x, y) {
+    colidiu = collideRectCircle(x, y, raquete.largura, raquete.comprimento, bolinha.posicaoX, bolinha.posicaoY, bolinha.diametro);
     //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
     if (colidiu) {
         velocidadeXBolinha *= -1
