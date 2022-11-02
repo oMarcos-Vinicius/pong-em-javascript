@@ -61,3 +61,8 @@ Para isso, precisamos mudar a estrutuda da função para receber parametros. Com
 <p>Criamos duas novas funções, uma chamada incluirPlacar para desenhar o placar do jogo. Nela encontramos função fill (para preencher uma cor) e text (para inserir um texto)<br>
 Criamos também a função marcarPontos. Toda vez que bolinha toda nas bordas laterais, é alterado o valor de duas variaveis, meusPontos e pontosDoOponente. A validação é feita quando a posição x da bolinha utrapassa os limiteis laterais, que são 10 ou 590.
 </p>
+
+<h1>Módulo 5: Editando Placar e adicionando sons</h1>
+
+>Editando o placar do jogo
+<p>Editamos o placar do jogo usando algumas funções dentro da função incluirPlacar, estas foram: stroke(para adicionar uma borda), textAlign(centralizar o texto), textSize(alterar a fonte do texto), rect(para desenhar os retangulos do placar), fill(color()) para prencher com a cor laranja.</p>
