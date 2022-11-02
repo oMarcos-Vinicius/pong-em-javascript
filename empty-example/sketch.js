@@ -33,6 +33,10 @@ function setup() {
     cnv.position(x, y);
 }
 
+//Placar do Jogo
+let meusPontos = 0;
+let pontosDoOponente = 0;
+
 let colidiu = false;
 
 //Desenha no palco
@@ -48,6 +52,8 @@ function draw() {
     verificaColisaoRaquete(raquete.posicaoX, raquete.posicaoY);
     movimentarRaqueteOponente();
     verificaColisaoRaquete(raqueteOponente.posicaoX, raqueteOponente.posicaoY);
+    incluirPlacar();
+    marcarPontos();
 }
 
 function desenhaBolinha() {
@@ -98,4 +104,19 @@ function verificaColisaoRaquete(x, y) {
 function movimentarRaqueteOponente() {
     raqueteOponente.velocidadeYOponente = bolinha.posicaoY - raqueteOponente.posicaoY - raquete.comprimento / 2 - 30;
     raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente;
+}
+
+function incluirPlacar() {
+    fill(255);
+    text(meusPontos, 278, 26);
+    text(pontosDoOponente, 321, 26);
+}
+
+function marcarPontos() {
+    if (bolinha.posicaoX < 10) {
+        pontosDoOponente += 1;
+    }
+    if (bolinha.posicaoX > 590) {
+        meusPontos += 1;
+    }
 }
