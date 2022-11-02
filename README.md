@@ -1,7 +1,9 @@
 # pong-em-javascript
 Aprendendo a fazer o jogo do Pong no Java Script | Aprendi na Alura
 
-<h1>Módulo 1: Iniciando no JavaScript</h1>
+<h1>Módulo 1: Pong no Scratch</h1>
+
+<h1>Módulo 2: Iniciando no JavaScript</h1>
 
 >Usando a biblioteca do P5
 <p>Precisei baixar a extenção do p5 para usar a biblioteca do p5.<br>
@@ -22,7 +24,7 @@ No draw, pintamos o palco de preto usando o backgroung, a bolinha usando o circl
 Também comentamos em nosso cógido para facilitar o entendimento do mesmo.
 </p>
 
-<h1>Módulo 2: Criando minha raquete no Jogo</h1>
+<h1>Módulo 3: Criando minha raquete no Jogo</h1>
 
 >Criando minha raquete.
 <p> Na biblioteca do p5, encontramos a função rect para desenhar um retangulo. Definimos quatro paremetros: (x,y,width,heigth).<br>
@@ -43,7 +45,14 @@ Para validarmos se a tecla está precionada, usamos a função do p5: keyIsDown
 collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
 </p>
 
+<h1>Módulo 4: Criando a Raquete do Oponente</h1>
+
 > Raquete do Oponente
 <p>Criamos as variaveis para raquete. Usamos a mesma função "mostrarRaquete" motivicando ela para receber paramentros x e y.<br>
 Criamos o movimento por meio da função "movimentarRaqueteOponente" **Não entendi como funciona essa função**
+</p>
+
+>Colisão com o Oponete
+<p>Usamos a função "Verifica colisão, para verificar colisão da bolinha com a raquete do oponente.<br>
+Para isso, precisamos mudar a estrutuda da função para receber parametros. Com isso, foi possivel usar a mesma função para verificar a colisão das duas raquetes.
 </p>
