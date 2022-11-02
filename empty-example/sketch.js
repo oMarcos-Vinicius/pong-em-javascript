@@ -2,7 +2,7 @@
 let bolinha = {
     posicaoX: 300,
     posicaoY: 200,
-    diametro: 15,
+    diametro: 13,
     raio: 7.5
 }
 
@@ -107,9 +107,15 @@ function movimentarRaqueteOponente() {
 }
 
 function incluirPlacar() {
+    stroke(255)
+    textAlign(CENTER);
+    textSize(16);
+    fill(color(256, 140, 0))
+    rect(180, 10, 40, 20)
+    rect(380, 10, 40, 20)
     fill(255);
-    text(meusPontos, 278, 26);
-    text(pontosDoOponente, 321, 26);
+    text(meusPontos, 200, 26);
+    text(pontosDoOponente, 400, 26);
 }
 
 function marcarPontos() {
