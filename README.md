@@ -56,3 +56,8 @@ Criamos o movimento por meio da função "movimentarRaqueteOponente" **Não ente
 <p>Usamos a função "Verifica colisão, para verificar colisão da bolinha com a raquete do oponente.<br>
 Para isso, precisamos mudar a estrutuda da função para receber parametros. Com isso, foi possivel usar a mesma função para verificar a colisão das duas raquetes.
 </p>
+
+>Placar do jogo
+<p>Criamos duas novas funções, uma chamada incluirPlacar para desenhar o placar do jogo. Nela encontramos função fill (para preencher uma cor) e text (para inserir um texto)<br>
+Criamos também a função marcarPontos. Toda vez que bolinha toda nas bordas laterais, é alterado o valor de duas variaveis, meusPontos e pontosDoOponente. A validação é feita quando a posição x da bolinha utrapassa os limiteis laterais, que são 10 ou 590.
+</p>
