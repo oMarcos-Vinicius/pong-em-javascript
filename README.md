@@ -66,3 +66,9 @@ Criamos também a função marcarPontos. Toda vez que bolinha toda nas bordas la
 
 >Editando o placar do jogo
 <p>Editamos o placar do jogo usando algumas funções dentro da função incluirPlacar, estas foram: stroke(para adicionar uma borda), textAlign(centralizar o texto), textSize(alterar a fonte do texto), rect(para desenhar os retangulos do placar), fill(color()) para prencher com a cor laranja.</p>
+
+>Adicionando Sons
+
+<p>Fiz download dos sons. Depois importei criando a função preload e usando a função existente loadSound(pra carregar os sons) e soundFormats(definir os formatos válidos).<br>
+Executei os sons usando a função play(toca uma vez) e loop(toca em loop).
+</p>

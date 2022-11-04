@@ -31,6 +31,7 @@ function setup() {
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
     cnv.position(x, y);
+    trilha.loop();
 }
 
 //Placar do Jogo
@@ -38,6 +39,18 @@ let meusPontos = 0;
 let pontosDoOponente = 0;
 
 let colidiu = false;
+
+//Sons do jogo
+let trilha;
+let raquetada;
+let ponto;
+
+function preload() {
+    soundFormats('mp3', 'ogg');
+    trilha = loadSound("../Pong - Sons/trilha.mp3");
+    raquetada = loadSound("../Pong - Sons/raquetada.mp3");
+    ponto = loadSound("../Pong - Sons/ponto.mp3");
+}
 
 //Desenha no palco
 function draw() {
@@ -48,7 +61,7 @@ function draw() {
     movimentaBolinha();
     movimentarRaquete();
     verificaColisaoBorda();
-    //verificaColisaoRaquete();
+    //verificaColisaoRaqueteManual();
     verificaColisaoRaquete(raquete.posicaoX, raquete.posicaoY);
     movimentarRaqueteOponente();
     verificaColisaoRaquete(raqueteOponente.posicaoX, raqueteOponente.posicaoY);
@@ -87,7 +100,7 @@ function movimentarRaquete() {
     }
 }
 
-function verificaColisaoRaquete() {
+function verificaColisaoRaqueteManual() {
     if (bolinha.posicaoX - bolinha.raio < raquete.posicaoX + raquete.largura && bolinha.posicaoY - bolinha.raio < raquete.posicaoY + raquete.comprimento && bolinha.posicaoY + bolinha.raio > raquete.posicaoY) {
         velocidadeXBolinha *= -1
     }
@@ -98,6 +111,7 @@ function verificaColisaoRaquete(x, y) {
     //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
     if (colidiu) {
         velocidadeXBolinha *= -1
+        raquetada.play();
     }
 }
 
@@ -121,8 +135,10 @@ function incluirPlacar() {
 function marcarPontos() {
     if (bolinha.posicaoX < 10) {
         pontosDoOponente += 1;
+        ponto.play();
     }
     if (bolinha.posicaoX > 590) {
         meusPontos += 1;
+        ponto.play();
     }
 }
