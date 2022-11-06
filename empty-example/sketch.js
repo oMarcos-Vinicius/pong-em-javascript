@@ -24,6 +24,7 @@ let raqueteOponente = {
     posicaoY: 150,
     velocidadeYOponente: 0
 }
+let chanceDeErrar = 0;
 
 //Palco
 function setup() {
@@ -46,7 +47,7 @@ let raquetada;
 let ponto;
 
 //Multiplayer
-let jogarMultiplayer = true
+let jogarMultiplayer = false;
 
 function preload() {
     soundFormats('mp3', 'ogg');
@@ -129,7 +130,22 @@ function movimentarRaqueteOponente() {
         }
     } else {
         raqueteOponente.velocidadeYOponente = bolinha.posicaoY - raqueteOponente.posicaoY - raquete.comprimento / 2 - 30;
-        raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente;
+        raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente + chanceDeErrar;
+        calculaChanceDeErrar()
+    }
+}
+
+function calculaChanceDeErrar() {
+    if (pontosDoOponente >= meusPontos) {
+        chanceDeErrar += 1
+        if (chanceDeErrar >= 39) {
+            chanceDeErrar = 40
+        }
+    } else {
+        chanceDeErrar -= 1
+        if (chanceDeErrar <= 35) {
+            chanceDeErrar = 35
+        }
     }
 }
 
