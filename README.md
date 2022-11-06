@@ -72,3 +72,6 @@ Criamos também a função marcarPontos. Toda vez que bolinha toda nas bordas la
 <p>Fiz download dos sons. Depois importei criando a função preload e usando a função existente loadSound(pra carregar os sons) e soundFormats(definir os formatos válidos).<br>
 Executei os sons usando a função play(toca uma vez) e loop(toca em loop).
 </p>
+
+>Multiplayer
+<p>Podemos adicionar teclas adicionais para movimentar a raquete do oponente. Com isso podemos adicionar um multiplayer em nosso jogo.<br>Criamos uma variavel para definir se o jogo será multiplayer ou não. Depois na função movimentarRaqueteOponente criamos uma condição: se o jogo for multiplayer, execultara o codigo do movimento pelo teclado. Definimos que o oponente moverá a raquete usando as teclas W e S. Podemos pegar o código das teclas na biblioteca do p5. Senão, mantem o codigo já feito antes.</p>

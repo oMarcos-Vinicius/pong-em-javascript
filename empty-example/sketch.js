@@ -45,6 +45,9 @@ let trilha;
 let raquetada;
 let ponto;
 
+//Multiplayer
+let jogarMultiplayer = true
+
 function preload() {
     soundFormats('mp3', 'ogg');
     trilha = loadSound("../Pong - Sons/trilha.mp3");
@@ -116,8 +119,18 @@ function verificaColisaoRaquete(x, y) {
 }
 
 function movimentarRaqueteOponente() {
-    raqueteOponente.velocidadeYOponente = bolinha.posicaoY - raqueteOponente.posicaoY - raquete.comprimento / 2 - 30;
-    raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente;
+
+    if (jogarMultiplayer) {
+        if (keyIsDown(87)) {
+            raqueteOponente.posicaoY -= 10;
+        }
+        if (keyIsDown(83)) {
+            raqueteOponente.posicaoY += 10;
+        }
+    } else {
+        raqueteOponente.velocidadeYOponente = bolinha.posicaoY - raqueteOponente.posicaoY - raquete.comprimento / 2 - 30;
+        raqueteOponente.posicaoY += raqueteOponente.velocidadeYOponente;
+    }
 }
 
 function incluirPlacar() {
