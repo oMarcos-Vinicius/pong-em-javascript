@@ -171,3 +171,9 @@ function marcarPontos() {
         ponto.play();
     }
 }
+
+function bolinhaNaoFicaPresa() {
+    if (bolinha.posicaoX - bolinha.raio < 0) {
+        bolinha.posicaoX = 23
+    }
+}
